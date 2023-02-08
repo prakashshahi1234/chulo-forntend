@@ -125,13 +125,13 @@ function Home() {
   let url = window.location.href;
 
   useEffect(() => {
-    if (url === "https://chulofood.com.np/") {
+    if (url === "https://chulofood.com.np/" || url === "https://www.chulofood.com.np/" ) {
       window.onscroll = function (ev) {
       
         if (window.innerHeight + window.scrollY+100 >= document.body.offsetHeight) {
-          window.location.href === "https://chulofood.com.np/" &&
+          window.location.href === "https://chulofood.com.np/" || url === "https://www.chulofood.com.np/" &&
             dispatch(loadAllProduct());
-          window.location.href === "https://chulofood.com.np/" &&
+          window.location.href === "https://chulofood.com.np/" || url === "https://www.chulofood.com.np/" &&
             setshowLower(true);
         }
       };
@@ -145,7 +145,7 @@ function Home() {
   }, [loading, product]);
 
   //seo variables
-  const title = 'Chulo.com . Your Cloud Kitchen'
+  const title = 'Chulo Food Delivery || chulo.com'
   const description="Chulo is cloud kitchen service provider in Surkhet Nepal.Get your favourite food."
   const keyword = "chulo.com"
   const subject = 'Cloud Kitchen and food delivery service.'

@@ -168,13 +168,13 @@ function Nav() {
 
         setState({ ...state, "right": false });
 
-       navigate("/checkout")
+       window.location.href("/checkout")
 
       }else{
 
         setState({ ...state, "right": false });
 
-       alert.show("Your Cart is empty. To shop product add in cart.", {timeout:5000})
+       alert.show("Your Cart is empty.", {timeout:5000})
        
       }
         

@@ -30,6 +30,7 @@ function Checkout() {
   const { pathname } = useLocation();
   // to load adress
   useEffect(() => {
+    
     !adress && user && dispatch(getUserAdress());
      
   }, [user]);
