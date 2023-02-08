@@ -145,13 +145,13 @@ function Home() {
   }, [loading, product]);
 
   //seo variables
-  const title = 'Chulo Food Delivery || chulo.com'
+  const title = 'Chulo Food Delivery || chulofood.com.np'
   const description="Chulo is cloud kitchen service provider in Surkhet Nepal.Get your favourite food."
-  const keyword = "chulo.com"
+  const keyword = "chulofood.com.np"
   const subject = 'Cloud Kitchen and food delivery service.'
-  const companyName = "Chulo Surkhet"
-  const companyEmail = 'info@chulo.com'
-  const domainUrl ="chulo.com"
+  const companyName = "Chulo Food Delivery Surkhet"
+  const companyEmail = 'info@chulofood.com.np'
+  const domainUrl ="chulofood.com.np"
   return (
     <div>
       <Helmet>
@@ -208,8 +208,8 @@ function Home() {
       )}
 
   <MessengerCustomerChat
-           pageId="107782228798600"
-           appId="1456227768240129"
+           pageId="102297996084565"
+           appId="749457673122614"
  
         />
     </div>

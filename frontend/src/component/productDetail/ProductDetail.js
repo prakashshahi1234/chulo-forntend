@@ -277,7 +277,7 @@ if(isAuthenticated){
          <>
          <Helmet>
          <title>{title}</title>
-      
+         
          </Helmet>
    
         {loading?<Loading/>:<div className='product-detail'>

@@ -168,7 +168,7 @@ function Nav() {
 
         setState({ ...state, "right": false });
 
-       window.location.href("/checkout")
+       window.location.href ="/checkout"
 
       }else{
 

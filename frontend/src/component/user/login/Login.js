@@ -80,13 +80,13 @@ function Login() {
         }
     }
 
-    const title = 'Log in - Chulo.com'
+    const title = 'Log in - Chulofood.com.np'
     const description="login into your account and start enjoy your favourite food."
-    const keyword = "chulo.com , chulo  , online food in surkhet, surkhet , online food delivery in surkhet"
+    const keyword = "chulofood.com.np , chulo  , online food in surkhet, surkhet , online food delivery in surkhet"
     const subject = 'Login'
-    const companyName = "chulo.com"
-    const companyEmail = 'info@chulo.com'
-    const domainUrl ="https://chulo.com"
+    const companyName = "chulofood.com.np"
+    const companyEmail = 'info@chulofood.com.np'
+    const domainUrl ="https://chulofood.com.np"
 
     return (
        <>
@@ -103,7 +103,7 @@ function Login() {
          <meta name="designer" content="Prakash Shahi"/>
          <meta name="copyright"  content="Copyright Reserved 2022" />
          <meta name="reply-to" content={companyEmail}/>
-         <meta name="owner" content="Chulo.com"/>
+         <meta name="owner" content="Chulofood.com.np"/>
          <meta name="url" content={domainUrl}/>
          <meta name="identifier-URL" content={domainUrl}/>
          <meta name="directory" content="submission"/>
