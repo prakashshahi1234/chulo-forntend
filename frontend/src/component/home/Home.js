@@ -125,13 +125,13 @@ function Home() {
   let url = window.location.href;
 
   useEffect(() => {
-    if (url === "http://localhost:3000/") {
+    if (url === "https://chulofood.com.np/") {
       window.onscroll = function (ev) {
       
         if (window.innerHeight + window.scrollY+100 >= document.body.offsetHeight) {
-          window.location.href === "http://localhost:3000/" &&
+          window.location.href === "https://chulofood.com.np/" &&
             dispatch(loadAllProduct());
-          window.location.href === "http://localhost:3000/" &&
+          window.location.href === "https://chulofood.com.np/" &&
             setshowLower(true);
         }
       };

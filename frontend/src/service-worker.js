@@ -74,7 +74,7 @@ self.addEventListener('push', function(event) {
 
     var title =event.data.json()?.message;
     var body = '';
-    var icon = 'http://localhost:3000/logo-large.png';
+    var icon = 'https://chulofood.com.np/logo-large.png';
     console.log(title)
     event.waitUntil(
     self.registration.showNotification(title, {

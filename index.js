@@ -6,7 +6,7 @@ app.use(express.static(path.join(__dirname, './frontend', 'build')))
 
 const options = {
 
-    target: 'http://localhost:8000/',
+    target: 'https://api.chulofood.com.np/',
     changeOrigin: true, // needed for virtual hosted site
 
 }
