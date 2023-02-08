@@ -336,7 +336,7 @@ function FillDetailAdress() {
               <option>Select Area</option>
              
 
-              {allData?.sort((a, b)=> a === b ? 0 : a < b ? -1 : 1).area?.map((item, key) => {
+              {allData?.sort((a, b)=> a.name === b.name ? 0 : a.name < b.name ? -1 : 1).area?.map((item, key) => {
                 return (
                   <option key={key} value={item?.id}>
                     {item?.name}
