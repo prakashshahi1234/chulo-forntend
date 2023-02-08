@@ -1,0 +1,98 @@
+.checkout-outer-flex{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 4%;
+}
+.checkout{
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    background-color: var(--bg-color);
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 300px;
+    /* margin-top: 100px; */
+}
+
+.x h2{
+  padding: 10px;
+  background-color: var(--border-color);
+}
+.adress-for-checkout{
+   
+    height: fit-content;
+    width: 300px;
+    border: var(--border);
+    margin: auto;
+  
+
+}
+
+.adress-for-checkout>p , .pay-info>P{
+ padding: 10px;
+ background-color: var(--border-color);
+}
+.pay-info>p>b{
+    float: right;
+}
+.adress-for-checkout>div>p{
+    font-size: 14px;
+    margin: 10px;
+}
+.adress-for-checkout div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.change-adress-btn{
+    width: 100%;
+}
+.cart{
+    display: flex;
+    flex-direction: column;
+    border: var(--border);
+    justify-content: center;
+    align-items: center;
+}
+.cart>.bottom-div{
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+.cart>.pay-info{
+ background-color: var(--border-color);
+ width: 100%;
+}
+.popup-div{
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.popup-div>p{
+    text-align: center;
+}
+.popup-div>button{
+    margin-top: 40px;
+}
+.inconvinience{
+    color: red;
+    width: 300px;
+    text-align: justify;
+}
+.inconvinience-title{
+    color: red;
+    /* padding-left: 10px; */
+}
+@media only screen and (max-width:600px){
+
+}
+

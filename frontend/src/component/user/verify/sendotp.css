@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Lateef&display=swap');
+
+
+.outer-div-send-otp{
+width: 300px;
+background-color: white;
+margin: auto;
+border: 1px solid lightgray;
+height: fit-content;
+margin-top: 100px;
+padding: 5px;
+height: 250px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.outer-div-send-otp h2{
+    padding: 4px;
+    background-color: lightgray;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.inner-div-send-otp{
+
+}
+
+.inner-div-send-otp form{
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.inner-div-send-otp input{
+    height: 30px;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    padding: 6px;
+}
+.inner-div-send-otp input:focus{
+    letter-spacing: 7px;
+    outline: 1px solid var(--border-color);
+
+}
+
+.submit-otp{
+    height: 45px;
+    width: 90px;
+    background-color: var(--button-color);
+    border: none;
+    transition: var(--transition);
+
+}
+
+.submit-otp:hover{
+    border: 3px solid rgb(231, 221, 79);
+    cursor: pointer;
+}
+.send-otp-again{
+    height: 36px;
+    width: 100%;
+    border: 1px solid var(--border-color);
+
+}
+.send-otp-again{
+    background: var(--button-color);
+}
+
+@media only screen and (max-width:600px){
+    .outer-div-send-otp h2{
+    /* background: ; */
+    font-size: 19px;
+    }
+    .inner-div-send-otp p{
+    font-size: 13px;
+
+    }
+}

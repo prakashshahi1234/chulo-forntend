@@ -1,0 +1,52 @@
+{
+
+  "icons": [
+    {
+      "src": "logo-large.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose":"any maskable"
+
+    },
+    {
+      "src": "logo-large.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "logo1.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "logo3.png",
+      "sizes": "24x24",
+      "type": "image/png"
+    },
+    {
+      "src": "logo4.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+    
+  ],
+  
+    "name": "Chulo.com - Find your favourite food",
+    "short_name": "Chulo.com-food",
+    "theme_color": "#113451",
+    "background_color": "#000000",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/"
+  
+}

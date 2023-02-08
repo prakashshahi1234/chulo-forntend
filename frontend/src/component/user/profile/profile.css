@@ -1,0 +1,114 @@
+.user-profile{
+    margin-top: 20px;
+}
+.normal-info{
+    width: 320px;
+    border: var(--border);
+    height:200px
+}
+.normal-info>div{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  align-items: center;
+  /* flex-wrap: wrap; */
+}
+
+.normal-info>div>div>p{
+    padding: 5px;
+    display: flex;
+    /* flex-wrap: wrap; */
+
+}
+.normal-info>.log-out-btn{
+    background-color: var(--button-color);
+    width: 120px;
+    color: black;
+    margin: 20px;
+}
+.user-details{
+    display: flex;   
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 90%;
+    justify-content: center;
+}
+.adress-info{
+    border: var(--border);
+    width: 300px;
+    /* padding: 20px; */
+    margin: 10px;
+    margin-top: 0px;
+    height:200px;
+}
+.adress-info>h2{
+    padding: 10px;
+    background-color: var(--title-bg-color);
+}
+.adress-edit-btn{
+    background-color: var(--button-color);
+    width: 120px;
+    color: black;
+    margin: 10px;
+}
+.adress>ul>li{
+    list-style-type: none;
+    padding: 4px;
+    text-align: justify;
+    text-transform: capitalize;
+}
+
+.order-details{
+  margin: auto;
+  width: 90%;  
+  overflow: auto;  
+}
+.order-table{
+    border-collapse: collapse;
+    width: fit-content;
+    text-align: center;
+    /* position: relative; */
+
+}
+.order-table>caption{
+    padding: 10px;
+    background-color: var(--border-color);
+}
+
+.order-details tr{
+    border: var(--border);
+}
+.order-details tr:hover{
+    border: 2px solid var(--border-color);
+    transition: 0.3s all;
+}
+.order-details td {
+    padding: 10px;
+}
+.order-details th{
+    text-transform: capitalize;
+    padding: 10px;
+    position: sticky;
+    top: 0px;
+
+}
+
+
+@media only screen and (max-width:600px){
+    .user-details{
+        margin: auto;
+        padding: auto;
+        justify-content: center;
+    }
+    
+    .adress-info{
+        margin-top: 20px;
+    }
+    .adress>ul>li{
+        font-size: 12px;
+    }
+    .order-table{
+        font-size: 13px;
+    }
+}

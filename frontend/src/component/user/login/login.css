@@ -1,0 +1,164 @@
+.login{
+    display: flex;
+    border: 1px solid lightgray;
+    margin: auto;
+    justify-content: center;
+    margin-top: 50px;
+    width: fit-content;
+    padding: 10px;
+    background-color: white;
+    flex-direction: row-reverse;
+    z-index: 99;
+}
+.login .left-login{
+ border-left: 1px solid var(--border-color);
+  margin-left: 20px;
+}
+.login .or-section{
+  display: flex;
+  align-items: center;
+}
+.login .or-section span{
+    border-top: 1px solid var(--border-color);
+    height: 0px;
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.email div{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.email div h3{
+    font-size: 17px;
+    margin-left: 20px;
+}
+.email div p{
+    font-size: 13px;
+    /* margin-right: 5px; */
+}
+.email div p b{
+    font-size: 14px;
+}
+.email form{
+    margin-top: 60px;
+}
+.email li {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+.email li label{
+    padding-bottom: 5px;
+    font-family: monospace;
+}
+.email li input{
+    height: 30px;
+    padding: 4px;
+    border: 1px solid var(--border-color);
+    width: 340px;
+    transition: 0.4s all;
+    border-radius: 5px;
+}
+.email input:focus{
+    outline: 1px solid var(--border-color);
+    padding: 6px;
+    transition: 0.4s all;
+
+}
+
+.email li:nth-child(2){
+    position: relative;
+}
+
+.email li input:first-child{
+    height: 40px;
+    border: none;
+    background-color: rgb(230, 230, 113);
+    color: black;
+    font-family: monospace;
+}
+.email .password-field{
+    position: relative;
+}
+.email li .show-pass-icon{
+    position: absolute;
+    bottom: 7px;
+    opacity: 0.7;
+    color: rgb(109, 109, 22); 
+     bottom: 10px;
+     right: 10px;
+}
+.animated-btn{
+    border: none;
+    background: yellow;
+}
+.google-login-btn img , .facebook-login-btn img{
+    height: 40px;
+    /* margin-left: -2px;*/
+    margin-right: 30px; 
+    background-color: white;
+    border-right: 1px solid var(--border-color);
+    padding-right: 10px;
+   
+}
+
+.google-login-btn, .facebook-login-btn{
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  justify-content: flex-start;
+  margin-top: 20px;
+  border: 1px solid rgb(214, 156, 156);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: white;
+  color: red;
+  border-radius: 6px;
+}
+
+.facebook-login-btn{
+    border: 1px solid rgb(154, 154, 224) !important;
+    color: blue;
+
+}
+.right-login{
+
+}
+
+@media only screen and (max-width:800px){
+    .email div h3{
+        margin: 0;
+    }
+    .login{
+       width: 95%;
+       border: none;
+    }
+    .right-login{
+        display: none;
+    }
+    .left-login{
+        margin: 0px;
+    }
+    .email{
+        margin: 0;
+    }
+    .email li{
+        margin: 20px 0px 0px 0px;
+        padding: 0;
+    }
+    .google-login-btn img , .facebook-login-btn img{
+     border-right: none;
+    }
+    .login .left-login{
+     border-left: none;
+     margin: 0px;
+    }
+
+    .email li input{
+        width: 300px;
+    }
+}
+

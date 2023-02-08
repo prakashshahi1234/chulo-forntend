@@ -1,0 +1,40 @@
+.loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.3);
+}
+.loading-wheel {
+    width: 20px;
+    height: 20px;
+    margin-top: -40px;
+    margin-left: -40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-width: 30px;
+    border-radius: 50%;
+    -webkit-animation: spin 1s linear infinite;
+    
+}
+
+.loading1 {
+    font-weight: bold;
+    display:inline-block;
+    font-family: monospace;
+    font-size: 50px;
+    clip-path: inset(0 3ch 0 0);
+    animation: l 0.7s steps(4) infinite;
+    color:rgb(236, 236, 236);
+    
+  }
+  
+  @keyframes l {
+    to {
+      clip-path: inset(0 -1ch 0 0)
+    }
+  }

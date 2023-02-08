@@ -1,0 +1,64 @@
+.forget-password{
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
+    justify-content: center;
+    padding-bottom: 100px;
+    margin-top: 100px;
+    border: var(--border);
+    padding: 40px;
+  }
+  .forget-password h3{
+      font-family: var(--title-font);
+      font-weight: 500;
+      text-align: center;
+      background-color: lightgray;
+      padding: 10px;
+  }
+  .forget-password form div {
+      display: flex;
+      align-items: flex-end;
+      justify-content:space-between;
+      /* margin: 20px; */
+     height: fit-content;
+      
+  }
+  .forget-password form div button{
+      height: 43px;
+      border: none;
+      background-color: blueviolet;
+      margin-left: 10px;
+      color: white;
+      padding: 10px;
+  }
+  .forget-password form div li{
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+  }
+  .forget-password form div li label{
+      margin-bottom: 5px;
+      font-size: 12px;
+  }
+  .forget-password form div li  input{
+      min-width:200px;
+      height: 30px;
+      border: 1px solid var(--border-color);
+      padding: 5px;
+      /* margin-bottom: 10px; */
+      transition: 0.4s all;
+  }
+  .forget-password form div li input:focus{
+    transition: 0.4s all;
+      outline: 1px solid var(--border-color);
+      padding: 7px;
+  }
+
+  @media only screen and (max-width:600px) {
+      .forget-password{
+          width: 95%;
+          padding: 5px;
+          margin-top: 10vh;
+      }
+  }

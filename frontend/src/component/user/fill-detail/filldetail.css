@@ -1,0 +1,103 @@
+.fill-detail{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    margin-top: 2%;
+    
+    
+}
+
+.fill-detail>h3{
+    padding: 5px;
+    text-align: center;
+
+}
+.fill-detail>.header>.header-out{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.fill-detail>.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--border-color);
+    padding: 10px;
+
+}
+.fill-detail button{
+    height: 40px;
+    background-color: var(--button-color);
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+}
+.fill-detail button:active{
+    opacity: 0.5;
+}
+.fill-detail form li{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10px;
+
+}
+.fill-detail form li label{
+    font-size: 13px;
+}
+.fill-detail form li input{
+    width: 350px;
+    height: 25px;
+    padding-left: 5px;
+    border: var(--border);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.fill-detail form li input:focus{
+    outline: 2px solid var(--border-color);
+}
+
+.fill-detail form li select{
+    width: 350px;
+    height: 40px;
+    border: var(--border); 
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+
+}
+.fill-detail form li select option{
+
+}
+.fill-detail form li select:focus{
+    outline: 2px solid var(--border-color);
+}
+
+
+.react-select__menu-list{
+    border:var(--border) ;
+}
+.phone-field{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.phone-field>button{
+    width: 120px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    
+}
+
+@media only screen and (max-width:600px){
+    .fill-detail form li select , .fill-detail form li input{
+        width: 300px;
+     }
+}
