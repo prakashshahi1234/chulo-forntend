@@ -167,6 +167,9 @@
     width: 280px;
 }
 
+.mobile-friendly{
+    display: none;
+}
 
 
 
@@ -181,6 +184,10 @@
         margin-right: 10px;
         background: none;
         outline: none;
+    }
+    .mobile-friendly{
+        display: flex;
+        font-size: 12px;
     }
 }
 
