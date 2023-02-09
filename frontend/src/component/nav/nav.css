@@ -188,9 +188,18 @@
     .mobile-friendly{
         display: flex;
         font-size: 12px;
+        min-width: 80px;
+        text-align: center;
+        justify-content: center;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-right: 3px;
+        background: darkgreen;
+        color: yellow;
+        text-transform: uppercase;
+        padding: 4px;
     }
 }
-
 @media only screen and (max-width:750px){
     .middle-nav input{
         width:300px
@@ -206,10 +215,10 @@
         
     }
     .logo{
-        height: 50px;
+        height: 40px;
     }
     .right-drawer-for-cart-item{
-        width: 90vw;
+        width: 80vw;
     }
     .right-drawer-for-cart-item img{
         width: 80px;
@@ -219,5 +228,12 @@
     }
     .cart-item-details{
         margin-left: 20px;
+    }
+    .mobile-friendly{
+        min-width: 40px;
+        padding: 4px;
+    }
+    .cart-item-for-moblie{
+        margin-right: 0px;
     }
 }

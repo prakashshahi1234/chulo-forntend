@@ -218,7 +218,7 @@ function Nav() {
                                  <p>Rs {item?.price * item?.quantity}</p>                          
                                  <div className='item-controller'>
                                      <div className='item-quantity'>
-                                       <p>  {"Q : " + item?.quantity} </p> 
+                                       <p style={{fontSize:"13px"}}>  {"Q : " + item?.quantity} </p> 
                                        
                                      </div>
                                      <Button sx={{background:"red" , color:"white"}} onClick={()=>{return(dispatch(deleteCartItem(item?.id)),settoggle(state=>!state),cartItemDetails.length===1 && window.location.reload() ,alert.success("Item removed."))}}>Remove</Button>
@@ -283,7 +283,7 @@ function Nav() {
                        </Drawer>
                      </React.Fragment>
                       ))}
-                      <Link className="mobile-friendly" to="/login" style={{borderRadius:"5px", textDecoration:"none" ,marginRight:"4px",background:"darkgreen", color:"yellow" , padding:"6px",  textTransform:"uppercase"}} >Log In</Link>
+                      <Link className="mobile-friendly" to="/login" >Log In</Link>
             </div>
             <div className='middle-nav'>
               <form onSubmit={searchItem}>

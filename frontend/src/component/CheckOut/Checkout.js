@@ -124,7 +124,7 @@ function Checkout() {
                       <p>Rs {item?.price * item?.quantity}</p>
                       <div className="item-controller">
                         <div className="item-quantity">
-                          <p> {"Quantity : " + item?.quantity} </p>
+                          <p style={{fontSize:"13px"}}> {"Quantity : " + item?.quantity} </p>
                         </div>
                         <button style={{background:"red" ,padding:"10px" ,color:"white"}} onClick={()=>{return(dispatch(deleteCartItem(item?.id)),cartItemDetails.length===1 && window.location.reload() ,alert.success("Item removed."))}}>Remove</button>
                       </div>
