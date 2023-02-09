@@ -209,7 +209,7 @@ function FillDetailAdress() {
       streetName &&
       verifiedReference===true &&
       area &&
-      !orderedItem
+     ( !orderedItem || orderedItem.length===0)
     ) {
       return (
         dispatch(
