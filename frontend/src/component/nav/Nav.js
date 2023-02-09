@@ -283,6 +283,7 @@ function Nav() {
                        </Drawer>
                      </React.Fragment>
                       ))}
+                      <Link to="/login" style={{borderRadius:"5px", textDecoration:"none" ,marginRight:"4px",background:"darkgreen", color:"yellow" , padding:"6px", fontSize:"14px", textTransform:"uppercase"}} className='link'>Log In</Link>
             </div>
             <div className='middle-nav'>
               <form onSubmit={searchItem}>

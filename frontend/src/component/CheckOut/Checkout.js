@@ -433,7 +433,7 @@ export const ChoosePaymentMethod = () => {
     <div className="x">
       <h2>Choose Payment Method</h2>
      { <div className="checkout">
-        <Popup
+        {/* <Popup
           position="right down"
           open={false}
           offsetY={100}
@@ -470,7 +470,7 @@ export const ChoosePaymentMethod = () => {
               Continue
             </Button>
           </div>
-        </Popup>
+        </Popup> */}
         <Popup
           position="right down"
           open={false}

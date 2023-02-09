@@ -4,15 +4,17 @@
     align-items: center;
     background-color: white;
     justify-content: center;
+    border: 1px solid lightgray;
+    padding-bottom: 5px;
 
 }
  .cardLink{
     text-decoration: none;
     color: black;
-    margin: 30px 0px 30px 0px;
+    margin: 20px 0px 20px 0px;
     margin-left: 5px;
     margin-right: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 
 
  }
@@ -34,6 +36,7 @@
     font-size: 20px;
     color: var(--bg-color);
     font-weight: 500;
+
 }
 .product-card>img{
     border-top-left-radius:10px;
@@ -63,5 +66,10 @@
     }
     .product-card span{
         font-size: 12px;
+    }
+    .product-card>img{
+    }
+    .cardLink{
+        margin: 7px;
     }
   }

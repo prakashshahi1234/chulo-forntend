@@ -29,7 +29,7 @@ function Login() {
         if(isAuthenticated){
            navigate(-1)
         }
-        if(error && error !=="Request failed with status code 401"){
+        if(error && error !=="Request failed with status code 401" && error!=="...."){
             alert.error(error)
         }
     },[isAuthenticated , error])
@@ -139,7 +139,7 @@ function Login() {
                               console.log('Login Failed');
                             }}
                             useOneTap
-                          />;
+                          />
                
             </div>
             {/* <div className='right-login'>
