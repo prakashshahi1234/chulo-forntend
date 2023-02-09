@@ -283,7 +283,7 @@ function Nav() {
                        </Drawer>
                      </React.Fragment>
                       ))}
-                      <Link className="mobile-friendly" to="/login" >Log In</Link>
+                    {!isAuthenticated &&  <Link className="mobile-friendly" to="/login" >Log In</Link>}
             </div>
             <div className='middle-nav'>
               <form onSubmit={searchItem}>
