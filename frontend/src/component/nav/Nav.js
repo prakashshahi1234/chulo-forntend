@@ -6,7 +6,7 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import MenuIcon from '@mui/icons-material/Menu';
 import AddToHomeScreen from '@ideasio/add-to-homescreen-react';
-import {   AppRegistration, Close, LoginOutlined, SearchOutlined } from '@mui/icons-material';
+import {   AppRegistration, Close, ContactMail, LoginOutlined, SearchOutlined } from '@mui/icons-material';
 import { Link ,useNavigate , useLocation} from "react-router-dom";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Avatar from '@mui/material/Avatar';
@@ -21,6 +21,8 @@ import { ListItem ,ListItemText , ListItemIcon } from '@mui/material';
 import {SearchItem} from '../../redux/actions/productAction' 
 import logo from './image/logo.jpg'
 import noBgLogo from './image/nobg-logo.png'
+import { BsTelephone } from "react-icons/bs";
+
 
 function Nav() {
 
@@ -118,6 +120,7 @@ function Nav() {
              >
             <List>
          
+            
              {isAuthenticated && <ListItem sx={{cursor:"pointer"}} onClick={()=>{navigate("/user-profile")}}>
                   <ListItemIcon >
                      <Avatar alt={user?.name} />
@@ -138,7 +141,12 @@ function Nav() {
                  <ListItemText primary={"Register"} />
             </ListItem>  </>
             }  
-           
+            <ListItem sx={{cursor:"pointer"}} onClick={()=>{navigate("/contact")}}>
+                  <ListItemIcon >
+                      <BsTelephone/>
+                  </ListItemIcon>
+                 <ListItemText primary={"contact"} />
+            </ListItem>
             {/* <p style={{textAlign:"start" , padding:'10px'}}>Category</p>     */}
             <Divider />        
 
@@ -168,7 +176,7 @@ function Nav() {
 
         setState({ ...state, "right": false });
 
-       window.location.href ="/checkout"
+        navigate("/checkout")
 
       }else{
 

@@ -39,6 +39,7 @@ function FillDetailAdress() {
     area:[]
   });
 
+
   const [verifiedReference , setverifiedReference]= useState(false)
   useEffect(() => {
     if(user){
@@ -207,8 +208,8 @@ function FillDetailAdress() {
       reference &&
       streetName &&
       verifiedReference===true &&
-      orderedItem?.length <= 0  &&
-      area 
+      area &&
+      !orderedItem
     ) {
       return (
         dispatch(
@@ -223,24 +224,25 @@ function FillDetailAdress() {
           )
         ),
         dispatch(getUserAdress()),
-        navigate(-1),
-        alert.success("Successfully Added Adress.")
+       setTimeout(navigate(-1), 1000  ),
+        alert.success("Successfully Added Adress. Press Back.")
       ); //
     } else {
       if (orderedItem?.length >= 1) {
-        alert.error(<p style={{textTransform:"capitalize"}}>Already you have a order ,so you can change after delivary.</p>);
+        alert.error(<p style={{}}>Your previous order is delivering to you so that you cannot change now. Try after delivery. </p>, {timeout:10000});
 
       } else {
-        !district && alert.error(<p style={{textTransform:"capitalize"}}> district is Invalid. select one.  </p>);
-        !province && alert.error(<p style={{textTransform:"capitalize"}}>  province is Invalid. select one.  </p>);
-        !localState && alert.error(<p style={{textTransform:"capitalize"}}> localState is Invalid. select one.  </p>);
-        !wardNo && alert.error(<p style={{textTransform:"capitalize"}}>  wardNo is Invalid. select one.  </p>);
-        !reference && alert.error(<p invalid style={{textTransform:"capitalize"}}>invalid phone enter 10 digit phone  </p>);
-        !streetName && alert.error(<p style={{textTransform:"capitalize"}}>  streetNameis Invalid. select one.  </p>);
-        verifiedReference===false && alert.error(<p Verify style={{textTransform:"capitalize"}}>Click send Otp button and Verify Your Phone  </p>)
-        !area && alert.error(<p style={{textTransform:"capitalize"}}> Area is Invalid. select one.  </p>);
+        !district && alert.error(<p style={{}}> district is Invalid. select one.  </p>);
+        !province && alert.error(<p style={{}}>  province is Invalid. select one.  </p>);
+        !localState && alert.error(<p style={{}}> localState is Invalid. select one.  </p>);
+        !wardNo && alert.error(<p style={{}}>  wardNo is Invalid. select one.  </p>);
+        !reference && alert.error(<p invalid style={{}}>invalid phone enter 10 digit phone  </p>);
+        !streetName && alert.error(<p style={{}}>  streetNameis Invalid. select one.  </p>);
+        verifiedReference===false && alert.error(<p Verify style={{}}>Click send Otp button and Verify Your Phone  </p>)
+        !area && alert.error(<p style={{}}> Area is Invalid. select one.  </p>);
 
       }
+     
     }
   };
 

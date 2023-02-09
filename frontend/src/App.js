@@ -23,7 +23,7 @@ const ForgetPassword = React.lazy(()=>import("./component/user/forget-pass/Forge
 const ProductDetail = React.lazy(()=>import("./component/productDetail/ProductDetail"));
 const UserProfile = React.lazy(()=>import("./component/user/profile/Profile"))
 const Search = React.lazy(()=>import("./component/search/Search"))
-
+const ContactUs =  React.lazy(()=>import("./component/contact/contact"))
 function App() {
 
   const dispatch = useDispatch();
@@ -93,6 +93,8 @@ function App() {
                             <Route path="payment" element={<ChoosePaymentMethod/>}/>
                  </Route>
                  <Route path="/search/:name" element={<Search/>}/>        
+
+                 <Route path="/contact" element={<ContactUs/>}/>        
                             
                  <Route path="*" element={<p>Page Not found</p>}/>  
           </Routes>
