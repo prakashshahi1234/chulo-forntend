@@ -223,7 +223,8 @@ function FillDetailAdress() {
           )
         ),
         dispatch(getUserAdress()),
-        navigate(-1)
+        navigate(-1),
+        alert.success("Successfully Added Adress.")
       ); //
     } else {
       if (orderedItem?.length >= 1) {
@@ -309,7 +310,7 @@ function FillDetailAdress() {
             </select>
           </li>
           <li>
-            <label>Select Ward No</label>
+            <label>Select Ward No (if you don't know  choose random one)</label>
             <select
               onChange={(e) => {
                 setwardNo(e.target.value);
@@ -346,7 +347,7 @@ function FillDetailAdress() {
             </select>
           </li>
           <li>
-            <label>Street Line / Office (Your exact location )</label>
+            <label>Street Line / Office ( Your exact location with hint )</label>
             <input
               type="text"
               required
