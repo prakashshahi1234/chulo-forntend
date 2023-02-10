@@ -30,7 +30,7 @@
 .product-card p{
     /* letter-spacing: 2.3px; */
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     line-height: 30px;
     margin-top: 13px;
     font-size: 20px;
@@ -42,7 +42,9 @@
     border-top-left-radius:10px;
     border-top-right-radius:10px;
 }
-.product-card span{
+.middle-span{
+ color: #121d39;
+ font-weight: 550;
 }
 @keyframes slideInFromLeft {
     0% {

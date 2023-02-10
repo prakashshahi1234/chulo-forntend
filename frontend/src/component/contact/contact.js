@@ -28,7 +28,7 @@ function ContactUs() {
           </span>
           <span className="cmn-contactus-detail">
             <BsTelephone />
-            <span>{telephone}</span>
+            <span>{}<a className="link" href={`tel:${telephone}`}>{telephone}</a></span>
           </span>
           <span className="cmn-contactus-detail">
             <HiOutlineMail />

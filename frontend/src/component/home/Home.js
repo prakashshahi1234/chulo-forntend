@@ -152,6 +152,9 @@ function Home() {
   const companyName = "Chulo Food Delivery Surkhet"
   const companyEmail = 'info@chulofood.com.np'
   const domainUrl ="chulofood.com.np"
+  
+
+
   return (
     <div>
       <Helmet>
