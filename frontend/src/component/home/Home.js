@@ -129,14 +129,14 @@ function Home() {
       window.onscroll = function (ev) {
       
         if (window.innerHeight + window.scrollY+100 >= document.body.offsetHeight) {
-          if(product?.length<=20){
+          if(product?.length<=30){
           window.location.href === "https://chulofood.com.np/" && dispatch(loadAllProduct());
           window.location.href === "https://www.chulofood.com.np/" && dispatch(loadAllProduct());
           window.location.href === "https://chulofood.com.np/" && setshowLower(true);
           window.location.href === "https://wwww.chulofood.com.np/" && setshowLower(true);
         }
           else{
-                window.location.reload()
+               
           }
         }
       };
