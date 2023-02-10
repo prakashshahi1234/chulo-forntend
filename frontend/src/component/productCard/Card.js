@@ -31,7 +31,7 @@ function Card({src,type ,title,price , productId , colorId , sizeId , size}){
             {type==="video" &&<video src={src} alt={title} width={width} autoPlay="true" muted/>}
             <p>{title}</p>
             <span className="middle-span">RS.{" " +price} /<small> {size}</small></span>
-           <span><del style={{opacity:0.6, fontSize:"14px"}}>Rs {" "}{price+(discount/100)*price}</del><small>{" "}-{discount}%</small> </span> 
+           <span><small><del style={{opacity:0.6, fontSize:"14px"}}>Rs {" "}{parseInt(price+(discount/100)*price)}</del></small> <small>{" "}-{discount}%</small> </span> 
         </div>
         </Link>
     )

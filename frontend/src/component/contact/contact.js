@@ -7,8 +7,8 @@ import { HiOutlineMail } from "react-icons/hi";
 
 function ContactUs() {
   const address = "Birendranagar 04 , surkhet";
-  const telephone = "9765800411";
-  const email = "info@chulofood.com.np";
+  const telephone = "+977 9765800411";
+  const email = "chulofooddelivery@gmail.com";
 
 
   return (

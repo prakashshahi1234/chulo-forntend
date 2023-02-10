@@ -123,25 +123,31 @@ function Home() {
   
   
   let url = window.location.href;
+// const u1 = "https://chulofood.com.np/"
+// const u2 = "https://www.chulofood.com.np/"
+const u1 = "http://localhost:3000/"
+const u2 = "http://localhost:3000/"
+
 
   useEffect(() => {
-    if (url === "https://chulofood.com.np/" || url === "https://www.chulofood.com.np/" ) {
+    if (url === u1 || url === u2 ) {
       window.onscroll = function (ev) {
       
         if (window.innerHeight + window.scrollY+100 >= document.body.offsetHeight) {
-          if(product?.length<=30){
-          window.location.href === "https://chulofood.com.np/" && dispatch(loadAllProduct());
-          window.location.href === "https://www.chulofood.com.np/" && dispatch(loadAllProduct());
-          window.location.href === "https://chulofood.com.np/" && setshowLower(true);
-          window.location.href === "https://wwww.chulofood.com.np/" && setshowLower(true);
+          if(product?.length<=35){
+      
+          window.location.href === u1 && dispatch(loadAllProduct());
+          window.location.href === u2 && dispatch(loadAllProduct());
+          window.location.href === u1 && setshowLower(true);
+          window.location.href === u2 && setshowLower(true);
         }
           else{
-               
+  
           }
         }
       };
     }
-  }, [url]);
+  }, [url, product]);
 
   useEffect(() => {
     if (loading === false) {
@@ -211,9 +217,12 @@ function Home() {
             <div style={{ height: "400px", width: "100%" }}>
               <Loading />
             </div>
-          )}
+          )
+          }
+          
         </div>
       )}
+            <a href="/" style={{display:"flex",textAlign:"center", margin:"auto"}}> Reload</a>
 
   <MessengerCustomerChat
            pageId="102297996084565"
