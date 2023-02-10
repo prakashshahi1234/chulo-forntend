@@ -123,10 +123,10 @@ function Home() {
   
   
   let url = window.location.href;
-// const u1 = "https://chulofood.com.np/"
-// const u2 = "https://www.chulofood.com.np/"
-const u1 = "http://localhost:3000/"
-const u2 = "http://localhost:3000/"
+const u1 = "https://chulofood.com.np/"
+const u2 = "https://www.chulofood.com.np/"
+// const u1 = "http://localhost:3000/"
+// const u2 = "http://localhost:3000/"
 
 
   useEffect(() => {
