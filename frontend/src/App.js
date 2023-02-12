@@ -1,5 +1,6 @@
 import Nav from "./component/nav/Nav"
-import { BrowserRouter as Router ,Routes, Route} from "react-router-dom";
+import Footer from './component/footer/footer';
+import { BrowserRouter as Router ,Routes, Route , useLocation} from "react-router-dom";
 import React,{Suspense,useEffect } from "react";
 import "./App.css"
 import {useDispatch  , useSelector} from "react-redux";
@@ -24,6 +25,7 @@ const ProductDetail = React.lazy(()=>import("./component/productDetail/ProductDe
 const UserProfile = React.lazy(()=>import("./component/user/profile/Profile"))
 const Search = React.lazy(()=>import("./component/search/Search"))
 const ContactUs =  React.lazy(()=>import("./component/contact/contact"))
+
 function App() {
 
   const dispatch = useDispatch();
@@ -32,6 +34,8 @@ function App() {
   const  p = useSelector(state=> state.productReducer);
   const token = cookie.get("token")
   const alert = useAlert()
+
+
   // user session login
   useEffect(()=>{
    
@@ -66,14 +70,15 @@ function App() {
       console.log(e)
     
     });
+   
   }, [])
 
  const removeError =()=> async(dispatch) =>{
      return(dispatch({type:REMOVE_ERROR_FOR_USER})  ,
     dispatch({type:REMOVE_ERROR_FOR_PRODUCT})  )
   }
-
-  
+ const url = window.location.href
+  // alert.show(url)
   return (
     <div className="App">
       <Router>
@@ -99,6 +104,7 @@ function App() {
                  <Route path="*" element={<p>Page Not found</p>}/>  
           </Routes>
           </Suspense>
+        { url !=='http://localhost:3000'  && <Footer/>}
         </Router>
     </div>
   );

@@ -29,6 +29,7 @@
  cursor:pointer;
  min-width:fit-content;
  color:rgb(230, 218, 198);
+ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 
 }
 .sub-nav li:hover{

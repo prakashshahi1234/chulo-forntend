@@ -1,10 +1,10 @@
 .trending-cards{
-    margin-top: -30vh;
+    margin-top: -38vh;
     z-index: 10 !important;
-    background-color: rgba(247, 255, 250, 0.3);
+    /* background-color: rgba(247, 255, 250, 0.3); */
     position:relative;
-    border-radius: 90px;
-    background-color: rgba(18, 29, 57, 0.1) ;
+    border-radius: 70px;
+    background:linear-gradient(to bottom,rgba(216, 221, 218, 0.3) , rgba(18, 29, 57, 0.14) );
    
 }
 .trending-cards>div{
@@ -56,6 +56,18 @@
     -moz-user-select: auto;
     -ms-user-select: auto;
     user-select: auto;
+  }
+  .category-list{
+   width: 90%;
+   margin: auto;
+  }
+  .category-list h3{
+    margin: 10px;
+  }
+  .button-cat{
+    text-transform: capitalize;
+    color: var(--bg-color);
+    
   }
   @media only screen and (max-width:500px){
     .trending-cards{

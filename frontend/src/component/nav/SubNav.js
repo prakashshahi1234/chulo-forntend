@@ -24,6 +24,7 @@ function SubNav() {
 
    },[name])
   const getproductByCategory = (categoryId , title) => {
+
     dispatch(SearchItem(categoryId, "category"));
     navigate("/search/" + categoryId , { state: { title} });
   };
@@ -44,8 +45,9 @@ function SubNav() {
     return 0;
   };
 
+ 
   return (
-    <div className="sub-nav">
+        <div className="sub-nav">
       {drop?.map((current, key) => {
         return (
           <div key={key} className="">
@@ -83,7 +85,7 @@ function SubNav() {
           </div>
         );
       })}
-    </div>
+        </div>
   );
 }
 

@@ -7,15 +7,17 @@ import Loading from '../loading/Loading';
 import {useAlert} from 'react-alert'
 import Card from '../productCard/Card';
 import { Helmet } from 'react-helmet';
+import { Button } from '@mui/material';
 function Search() {
 
     let {name } = useParams();
-   
+    const {state} = useLocation()
+     
     const dispatch = useDispatch();
     const navigate =  useNavigate();
-    const {searchedItem , loading , error} = useSelector(state=>state.productReducer)
+    const {searchedItem , loading , error, product , category} = useSelector(state=>state.productReducer)
     const alert = useAlert()
-    
+     
     useEffect(()=>{
 
     if(error){
@@ -37,15 +39,14 @@ function Search() {
     },[name])
  
     
-  
+
 
   return (
 
 
        <div>
          <Helmet>
-  <title>{name}</title>
-      
+ <title>{state?.title || name}</title>
 
           </Helmet>
 
@@ -69,6 +70,17 @@ function Search() {
               }
              
         </div>}
+        <div className="category-list">
+        <h3>Choose Category</h3>
+        <div>
+      { category && category?.map((item, key)=>{
+          return <Button key={key+"34"} className="button-cat" onClick={()=>{
+            return(dispatch(SearchItem(item?.id, "category")),
+            navigate(`/search/${item.id}` ,{state:{title:item.name}} ))}}
+             >{item.name}</Button>
+        })}
+        </div>
+      </div>
     </div>
 
   )

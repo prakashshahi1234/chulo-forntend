@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   deleteALLCart,
   loadAllProduct,
+  SearchItem
 } from "../../redux/actions/productAction";
 import Loading from "../loading/Loading";
 import {
@@ -20,15 +21,16 @@ import {Helmet} from 'react-helmet'
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import slider1 from './image/slider-1.jpeg'
 import slider2 from './image/slider2.jpg'
-
-
+import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 
 function Home() {
+  const navigate = useNavigate()
   const sliderRef = useRef("");
   const xref = useRef("");
   const dispatch = useDispatch();
   const { loading, adress } = useSelector((state) => state.userReducer);
-  const { product, cartItem, cartItemDetails } = useSelector(
+  const { product, cartItem, cartItemDetails  , category} = useSelector(
     (state) => state.productReducer
   );
   const alert = useAlert();
@@ -123,10 +125,10 @@ function Home() {
   
   
   let url = window.location.href;
-const u1 = "https://chulofood.com.np/"
-const u2 = "https://www.chulofood.com.np/"
-// const u1 = "http://localhost:3000/"
-// const u2 = "http://localhost:3000/"
+// const u1 = "https://chulofood.com.np/"
+// const u2 = "https://www.chulofood.com.np/"
+const u1 = "http://localhost:3000/"
+const u2 = "http://localhost:3000/"
 
 
   useEffect(() => {
@@ -134,7 +136,7 @@ const u2 = "https://www.chulofood.com.np/"
       window.onscroll = function (ev) {
       
         if (window.innerHeight + window.scrollY+100 >= document.body.offsetHeight) {
-          if(product?.length<=35){
+          if(product?.length<=30){
       
           window.location.href === u1 && dispatch(loadAllProduct());
           window.location.href === u2 && dispatch(loadAllProduct());
@@ -190,7 +192,7 @@ const u2 = "https://www.chulofood.com.np/"
          <meta name="distribution" content="local"/>
       </Helmet>  
       <Slider ref={sliderRef} {...settings} style={{overflow:"hidden",width:"100%",margin:"auto",marginTop:"0px",zIndex:1,position:"relative"}}>
-                 <div onClick={()=>{}}><img src={slider1} height="auto" width="100%" alt=""/></div>
+                 {/* <div onClick={()=>{}}><img src={slider1} height="auto" width="100%" alt=""/></div> */}
                  <div onClick={()=>{}}><img src={slider2} height="auto" width="100%" alt=""/></div>
               
              </Slider>
@@ -222,7 +224,17 @@ const u2 = "https://www.chulofood.com.np/"
           
         </div>
       )}
-            <a href="/" style={{display:"flex",textAlign:"center", margin:"auto"}}> Reload</a>
+      <div className="category-list">
+        <h3>Choose Category</h3>
+        <div>
+      { category && product.length>=30 && category?.map((item, key)=>{
+          return <Button key={key+"34"} className="button-cat" onClick={()=>{ 
+           return( dispatch(SearchItem(item?.id, "category")),
+            navigate(`/search/${item.id}` ,{state:{title:item.name}} ))}} 
+            >{item.name}</Button>
+        })}
+        </div>
+      </div>
 
   <MessengerCustomerChat
            pageId="102297996084565"

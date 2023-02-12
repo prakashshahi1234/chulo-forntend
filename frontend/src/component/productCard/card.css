@@ -6,6 +6,7 @@
     justify-content: center;
     border: 1px solid lightgray;
     padding-bottom: 5px;
+    border-radius: 15px;
 
 }
  .cardLink{
@@ -38,9 +39,10 @@
     font-weight: 500;
 
 }
-.product-card>img{
-    border-top-left-radius:10px;
-    border-top-right-radius:10px;
+.product-card img{
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+
 }
 .middle-span{
  color: #121d39;
