@@ -1,6 +1,6 @@
 import React , {useEffect} from 'react';
 import "./search.css";
-import {useParams , useNavigate} from 'react-router-dom';
+import {useParams , useNavigate , useLocation} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {SearchItem} from '../../redux/actions/productAction'
 import Loading from '../loading/Loading';
@@ -9,7 +9,8 @@ import Card from '../productCard/Card';
 import { Helmet } from 'react-helmet';
 function Search() {
 
-    let {name , title} = useParams();
+    let {name } = useParams();
+    let {title } = useLocation();
        
     const dispatch = useDispatch();
     const navigate =  useNavigate();
@@ -46,7 +47,7 @@ function Search() {
          <Helmet>
        {title &&  <title>{name-title}</title>}
        {!title && <title>{name}</title>}
-       
+
           </Helmet>
 
         {loading?<Loading/>:<div className='cart-container'>
