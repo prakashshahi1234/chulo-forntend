@@ -10,8 +10,7 @@ import { Helmet } from 'react-helmet';
 function Search() {
 
     let {name } = useParams();
-    const {state} = useLocation();
-    const { title} = state;
+   
     const dispatch = useDispatch();
     const navigate =  useNavigate();
     const {searchedItem , loading , error} = useSelector(state=>state.productReducer)
@@ -45,8 +44,8 @@ function Search() {
 
        <div>
          <Helmet>
-       {title &&  <title>{name-title}</title>}
-       {!title && <title>{name}</title>}
+  <title>{name}</title>
+      
 
           </Helmet>
 
