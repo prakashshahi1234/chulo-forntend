@@ -26,7 +26,6 @@ import { Button } from "@mui/material";
 
 function Home() {
   const navigate = useNavigate()
-  const urlOf = useLocation()
   const sliderRef = useRef("");
   const xref = useRef("");
   const dispatch = useDispatch();
@@ -50,8 +49,12 @@ function Home() {
     dispatch(loadAllProduct());
     dispatch(getUserAdress());
   }, []);
+
+  const urlParams = new URLSearchParams(window.location.search);
+const pageSize = urlParams.get('fbclid');
+
   useEffect(()=>{
- if(urlOf.pathname!=="/"){
+ if(pageSize){
   window.location.replace("https://chulofood.com.np")
 
  }
