@@ -58,7 +58,7 @@ const pageSize = urlParams.get('fbclid');
   window.location.replace("https://chulofood.com.np")
 
  }
-  },[urlOf])
+  },[pageSize])
 
   const [location , setLocation] = useState({})
 
