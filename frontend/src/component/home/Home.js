@@ -21,11 +21,12 @@ import {Helmet} from 'react-helmet'
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import slider1 from './image/slider-1.jpeg'
 import slider2 from './image/slider2.jpg'
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useLocation } from "react-router-dom";
 import { Button } from "@mui/material";
 
 function Home() {
   const navigate = useNavigate()
+  const urlOf = useLocation()
   const sliderRef = useRef("");
   const xref = useRef("");
   const dispatch = useDispatch();
@@ -46,10 +47,15 @@ function Home() {
   };
   // load initial product
   useEffect(() => {
-    window.location.replace("https://chulofood.com.np")
     dispatch(loadAllProduct());
     dispatch(getUserAdress());
   }, []);
+  useEffect(()=>{
+ if(urlOf.pathname!=="/"){
+  window.location.replace("https://chulofood.com.np")
+
+ }
+  },[urlOf])
 
   const [location , setLocation] = useState({})
 
