@@ -10,8 +10,8 @@ import { Helmet } from 'react-helmet';
 function Search() {
 
     let {name } = useParams();
-    let {title } = useLocation();
-       
+    const {state} = useLocation();
+    const { title} = state;
     const dispatch = useDispatch();
     const navigate =  useNavigate();
     const {searchedItem , loading , error} = useSelector(state=>state.productReducer)

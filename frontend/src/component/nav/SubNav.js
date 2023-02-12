@@ -25,7 +25,7 @@ function SubNav() {
    },[name])
   const getproductByCategory = (categoryId , title) => {
     dispatch(SearchItem(categoryId, "category"));
-    navigate("/search/" + categoryId , {title});
+    navigate("/search/" + categoryId , { state: { title} });
   };
   
 
