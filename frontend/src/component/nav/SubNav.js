@@ -23,9 +23,9 @@ function SubNav() {
    useEffect(()=>{
 
    },[name])
-  const getproductByCategory = (categoryId) => {
+  const getproductByCategory = (categoryId , title) => {
     dispatch(SearchItem(categoryId, "category"));
-    navigate("/search/" + categoryId);
+    navigate("/search/" + categoryId , {title});
   };
   
 
@@ -63,7 +63,7 @@ function SubNav() {
                   <li
                     key={key}
                     onClick={() => {
-                    getproductByCategory(item.id);
+                    getproductByCategory(item?.id, item?.name);
                     }}
                     style={{border:item?.id===name && '1px solid white'}}
                   >

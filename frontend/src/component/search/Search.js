@@ -9,7 +9,7 @@ import Card from '../productCard/Card';
 import { Helmet } from 'react-helmet';
 function Search() {
 
-    let {name} = useParams();
+    let {name , title} = useParams();
        
     const dispatch = useDispatch();
     const navigate =  useNavigate();
@@ -44,7 +44,9 @@ function Search() {
 
        <div>
          <Helmet>
-         <title>{name}</title>
+       {title &&  <title>{name-title}</title>}
+       {!title && <title>{name}</title>}
+       
           </Helmet>
 
         {loading?<Loading/>:<div className='cart-container'>

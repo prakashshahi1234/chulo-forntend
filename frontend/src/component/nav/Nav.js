@@ -125,7 +125,7 @@ function Nav() {
                   <ListItemIcon >
                      <Avatar alt={user?.name} />
                   </ListItemIcon>
-                 <ListItemText primary={"profile"} />
+                 <ListItemText primary={"Profile"} />
             </ListItem>}
            { !isAuthenticated && <>
             <ListItem onClick={()=>{navigate("/login")}}>
@@ -145,7 +145,7 @@ function Nav() {
                   <ListItemIcon >
                       <BsTelephone/>
                   </ListItemIcon>
-                 <ListItemText primary={"contact"} />
+                 <ListItemText primary={"Contact"} />
             </ListItem>
             {/* <p style={{textAlign:"start" , padding:'10px'}}>Category</p>     */}
             <Divider />        
