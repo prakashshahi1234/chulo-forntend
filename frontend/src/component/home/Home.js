@@ -46,6 +46,7 @@ function Home() {
   };
   // load initial product
   useEffect(() => {
+    window.location.replace("https://chulofood.com.np")
     dispatch(loadAllProduct());
     dispatch(getUserAdress());
   }, []);
