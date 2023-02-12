@@ -222,7 +222,7 @@ function Nav() {
                             {item.imagesrc[0].type==="video" && <video src ={ item.imagesrc[0].src} height={""} width={"100px"} autoPlay="true" muted/>}
                              <div className='cart-item-details'>
                                  <p   onClick={()=>{return( setState(state=>({...state, right:false})),navigate(`product-detail/${item.productId}/${item.name}`))}}>{item?.name}</p>
-                                 <p>{item?.size}/{item?.color}</p>                        
+                                 <p>{item?.size}</p>                        
                                  <p>Rs {item?.price * item?.quantity}</p>                          
                                  <div className='item-controller'>
                                      <div className='item-quantity'>
