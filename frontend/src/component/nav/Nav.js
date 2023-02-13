@@ -241,6 +241,7 @@ function Nav() {
           
           </Box>
       );
+      
       useEffect(()=>{
         if(cartItem?.length===1 && pathname.includes("product-detail") ) {
           setState(state=>({...state , right:true}))

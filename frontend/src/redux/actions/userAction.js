@@ -14,6 +14,7 @@ import {
   GET_STATUS_OF_APPLICATION_REQUEST,
   GET_STATUS_OF_APPLICATION_SUCCESS,
   GET_USER_ADRESS,
+  GET_USER_ADRESS_FAILED,
   LOADING_FALSE,
   LOADING_TRUE,
   LOGIN_USER_FAILED,
@@ -126,7 +127,7 @@ export const getUserAdress = () =>async(dispatch)=>{
   }
   catch(e){
 
-    dispatch({type:GET_USER_ADRESS , payload:e.response.data.message})
+    dispatch({type:GET_USER_ADRESS_FAILED , payload:e.response.data.message})
 
   }
 }
@@ -277,7 +278,7 @@ export const setLocation =(alert)=> async(dispatch)=>{
     if(result.state==="denied" && verifyPage !==0){
       alert.error(<div>
         <p>Follow the guide below to allow location for better  experience.</p>
-        <img src={locationguide}  />
+        {/* <img src={locationguide}  /> */}
         </div>,{timeOut:15000})
       const timeStamp =new Date().getTime()
       dispatch({type:GET_LOCATION_SUCCESS , payload:{ timeStamp}})

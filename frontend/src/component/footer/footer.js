@@ -13,7 +13,7 @@ function Footer() {
      console.log(product.length)
   return (
     <>
-    {pathname==="/"  && loading===false && product.length>=45 &&
+    {pathname==="/"  && loading===false && product.length>=30 &&
     <footer className='footer'>     
       <div className='second-div'>
          <div>

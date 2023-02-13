@@ -31,7 +31,8 @@ import {
   GET_LOCATION_FAILED,
   GET_STATUS_OF_APPLICATION_REQUEST,
   GET_STATUS_OF_APPLICATION_FAILED,
-  GET_STATUS_OF_APPLICATION_SUCCESS
+  GET_STATUS_OF_APPLICATION_SUCCESS,
+  GET_USER_ADRESS_FAILED
 } from '../constants/userConstant'
 
 
@@ -169,6 +170,7 @@ export const userReducer =(state ={ user: {}},action)=>{
       case ORDER_PLACE_FAILED:
         case GET_LOCATION_FAILED:
         case GET_STATUS_OF_APPLICATION_FAILED:
+          case GET_USER_ADRESS_FAILED:
         return{
           ...state ,
           loading:false,

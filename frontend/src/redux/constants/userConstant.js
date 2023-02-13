@@ -15,6 +15,7 @@ export const LOGOUT_USER_SUCCESS ="logout_user_success";
 export const LOGOUT_USER_FAILED ="logout_user_failed";
 
 export const GET_USER_ADRESS ="get_user_adress";
+export const GET_USER_ADRESS_FAILED ="get_user_adress failed";
 export const UPDATE_USER_ADRESS ="update_user_adress";
 export const UPDATE_USER_ADRESS_FAILED ="update_user_adress_failed";
 
