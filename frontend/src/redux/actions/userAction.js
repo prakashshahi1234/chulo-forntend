@@ -277,7 +277,7 @@ export const setLocation =(alert)=> async(dispatch)=>{
      const verifyPage =window.location.pathname.search("/verify")
     if(result.state==="denied" && verifyPage !==0){
       alert.error(<div>
-        <p>Follow the guide below to allow location for better  experience.</p>
+        <p>Allow location to get better experience.</p>
         {/* <img src={locationguide}  /> */}
         </div>,{timeOut:15000})
       const timeStamp =new Date().getTime()

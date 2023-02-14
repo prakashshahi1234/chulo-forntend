@@ -119,7 +119,7 @@ function Checkout() {
                         {item?.name}
                       </p>
                       <p>
-                        {item?.size}/{item?.color}
+                        {item?.size}
                       </p>
                       <p>Rs {item?.price * item?.quantity}</p>
                       <div className="item-controller">

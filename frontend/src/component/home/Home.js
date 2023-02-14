@@ -168,12 +168,12 @@ const u2 = "https://www.chulofood.com.np/"
   }, [loading, product]);
 
   //seo variables
-  const title = 'Chulo Food Delivery || chulofood.com.np'
-  const description="Chulo is cloud kitchen service provider in Surkhet Nepal.Get your favourite food."
-  const keyword = "chulofood.com.np"
+  const title = 'Chulo Food Delivery'
+  const description="Chulo Food Delivery is food delivery service provider in Surkhet Nepal.Get your favourite food."
+  const keyword = "chulofood.com.np , chulo food delivery , chulo food , birendranagar"
   const subject = 'Cloud Kitchen and food delivery service.'
   const companyName = "Chulo Food Delivery Surkhet"
-  const companyEmail = 'info@chulofood.com.np'
+  const companyEmail = 'chulofooddelivery@gmail.com'
   const domainUrl ="chulofood.com.np"
   
 
