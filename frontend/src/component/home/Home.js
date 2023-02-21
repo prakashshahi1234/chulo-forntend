@@ -168,7 +168,7 @@ const u2 = "https://www.chulofood.com.np/"
   }, [loading, product]);
 
   //seo variables
-  const title = 'Chulo Food Delivery'
+  const title = 'Chulo Food Delivery | food delivery service in Surkhet'
   const description="Chulo Food Delivery is food delivery service provider in Surkhet Nepal.Get your favourite food."
   const keyword = "chulofood.com.np , chulo food delivery , chulo food , birendranagar"
   const subject = 'Cloud Kitchen and food delivery service.'
@@ -188,7 +188,7 @@ const u2 = "https://www.chulofood.com.np/"
          <meta name="copyright"content={companyName}/>
          <meta name="language" content="ES"/>
          <meta name="robots" content="index,follow" />
-         <meta name="topic" content="Online Shopping in Nepal"/>
+         <meta name="topic" content="Online food delivery in Nepal"/>
          <meta name="Classification" content="Business"/>
          <meta name="designer" content="Prakash Shahi"/>
          <meta name="copyright"  content="Copyright Reserved 2022" />
