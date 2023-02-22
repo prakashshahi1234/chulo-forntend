@@ -24,13 +24,13 @@ import slider2 from './image/slider2.jpg'
 import { useNavigate , useLocation } from "react-router-dom";
 import { Button } from "@mui/material";
 import { useGoogleOneTapLogin } from '@react-oauth/google';
-
+import { LOGIN_USER_SUCCESS } from "../../redux/constants/userConstant";
 function Home() {
   const navigate = useNavigate()
   const sliderRef = useRef("");
   const xref = useRef("");
   const dispatch = useDispatch();
-  const { loading, adress } = useSelector((state) => state.userReducer);
+  const { loading, adress ,isAuthenticated} = useSelector((state) => state.userReducer);
   const { product, cartItem, cartItemDetails  , category} = useSelector(
     (state) => state.productReducer
   );
@@ -50,20 +50,22 @@ function Home() {
     dispatch(loadAllProduct());
     dispatch(getUserAdress());
 
-    useGoogleOneTapLogin({
-      onSuccess: async credentialResponse => {
-       
-          alert.success("Login Successfull.")
-
-          const {data} =  await  axios.post('api/v1/register', { },{headers: {Authorization:credentialResponse.credential}})
-         
-      dispatch({type:LOGIN_USER_SUCCESS , payload: data?.user})
-       
-    }
-  })
+   
     
 
   }, []);
+
+  !isAuthenticated && useGoogleOneTapLogin({
+    onSuccess: async credentialResponse => {
+     
+        alert.success("Login Successfull.")
+
+        const {data} =  await  axios.post('api/v1/register', { },{headers: {Authorization:credentialResponse.credential}})
+       
+    dispatch({type:LOGIN_USER_SUCCESS , payload: data?.user})
+     
+  }
+})
 
   const urlParams = new URLSearchParams(window.location.search);
 const pageSize = urlParams.get('fbclid');
