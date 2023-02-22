@@ -23,6 +23,7 @@ import slider1 from './image/slider-3.png'
 import slider2 from './image/slider2.jpg'
 import { useNavigate , useLocation } from "react-router-dom";
 import { Button } from "@mui/material";
+import { useGoogleOneTapLogin } from '@react-oauth/google';
 
 function Home() {
   const navigate = useNavigate()
@@ -48,6 +49,20 @@ function Home() {
   useEffect(() => {
     dispatch(loadAllProduct());
     dispatch(getUserAdress());
+
+    useGoogleOneTapLogin({
+      onSuccess: async credentialResponse => {
+       
+          alert.success("Login Successfull.")
+
+          const {data} =  await  axios.post('api/v1/register', { },{headers: {Authorization:credentialResponse.credential}})
+         
+      dispatch({type:LOGIN_USER_SUCCESS , payload: data?.user})
+       
+    }
+  })
+    
+
   }, []);
 
   const urlParams = new URLSearchParams(window.location.search);
