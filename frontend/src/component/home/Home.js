@@ -55,7 +55,7 @@ function Home() {
 
   }, []);
 
-  !isAuthenticated && useGoogleOneTapLogin({
+   useGoogleOneTapLogin({
     onSuccess: async credentialResponse => {
      
         alert.success("Login Successfull.")
