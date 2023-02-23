@@ -69,7 +69,7 @@ function Checkout() {
     const widthOfwindow = window.innerWidth;
     const heightOfwindow = document.body.scrollHeight;
     if(widthOfwindow<600){
-      window.scrollTo(0, heightOfwindow);
+      window.scrollTo(0, heightOfwindow-500);
     }else{
 
     }
@@ -177,7 +177,7 @@ function Checkout() {
                      alert.error(`Minimum Amount is 150.Your order amount is ${ totalPrice+adress?.delivaryCharge}.Shop other food of amount ${150-totalPrice-adress?.delivaryCharge} to place order` , {timeout:10000});
                   }}
                 >
-                  Continue
+                 <b>Continue</b> 
                 </button>
               )}
              
