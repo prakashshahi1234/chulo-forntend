@@ -21,6 +21,7 @@ import {Helmet} from 'react-helmet'
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import slider1 from './image/slider-3.png'
 import slider2 from './image/slider2.jpg'
+import slider4 from './image/slider-4.png'
 import { useNavigate , useLocation } from "react-router-dom";
 import { Button } from "@mui/material";
 import { useGoogleOneTapLogin } from '@react-oauth/google';
@@ -219,8 +220,8 @@ const u2 = "https://www.chulofood.com.np/"
          <meta name="distribution" content="local"/>
       </Helmet>  
       <Slider ref={sliderRef} {...settings} style={{overflow:"hidden",width:"100%",margin:"auto",marginTop:"0px",zIndex:1,position:"relative"}}>
+                 <div onClick={()=>{}}><img src={slider4} height="auto" width="100%" alt=""/></div>
                  <div onClick={()=>{}}><img src={slider1} height="auto" width="100%" alt=""/></div>
-                 <div onClick={()=>{}}><img src={slider2} height="auto" width="100%" alt=""/></div>
               
              </Slider>
       {loading || processed ? (
