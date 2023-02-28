@@ -12,7 +12,7 @@ function Card({src,type ,title,price , productId , colorId , sizeId , size}){
     useEffect(()=>{
      let available = parseInt(widthOfwindow) -(15*5)
      if(widthOfwindow>700){
-        setwidth(available/5.5);
+        setwidth(available/5);
 
      }else if( widthOfwindow>4500){
          setwidth("40%")

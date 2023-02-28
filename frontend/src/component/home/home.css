@@ -1,5 +1,5 @@
 .trending-cards{
-    margin-top: -38vh;
+    margin-top: -33vh;
     z-index: 10 !important;
     /* background-color: rgba(247, 255, 250, 0.3); */
     position:relative;
@@ -61,13 +61,30 @@
    width: 90%;
    margin: auto;
   }
+  .category-list>div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
   .category-list h3{
     margin: 10px;
+    font-size: 22px;
+
   }
   .button-cat{
     text-transform: capitalize;
-    color: var(--bg-color);
+    color:rgba(8, 119, 47, 0.85);
+    font-size: 17px;
+    background-color: rgba(38, 55, 228, 0.18);
+    margin: 10px;
+    font-weight: 700;
+    border-radius: 4px;
     
+  }
+  .button-cat:hover{
+    background-color:#121d39;
+    color: white;
   }
   @media only screen and (max-width:500px){
     .trending-cards{
