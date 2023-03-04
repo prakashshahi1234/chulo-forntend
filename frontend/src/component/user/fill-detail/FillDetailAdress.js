@@ -16,14 +16,15 @@ function FillDetailAdress() {
   const [loading, setloading] = useState(false);
   const [name, setname] = useState("");
   const [phone, setphone] = useState("");
-  const [province, setprovince] = useState("");
-  const [district, setdistrict] = useState("");
-  const [localState, setlocalState] = useState("");
-  const [wardNo, setwardNo] = useState("");
+  const [province, setprovince] = useState(1);
+  const [district, setdistrict] = useState(1);
+  const [localState, setlocalState] = useState(1);
+  const [wardNo, setwardNo] = useState(1);
   const [area, setArea] = useState("");
   const [streetName, setstreetName] = useState("");
   const [reference, setreference] = useState("");
   const [otp, setotp] = useState("");
+
   const { error, orderedItem, user, adress } = useSelector(
     (state) => state.userReducer
   );
@@ -121,7 +122,7 @@ function FillDetailAdress() {
       setphone("")
     };
     load();
-  }, [localState]);
+  }, []);
 
   // ward no
   useEffect(() => {
@@ -260,7 +261,7 @@ function FillDetailAdress() {
         <form>
           {/* <li><label>Name </label><input type="text" required onChange={(e)=>{setname(e.target.value)}}/></li>
                      <li><label>Phone</label><input type="text" required onChange={(e)=>{setphone(e.target.value)}}/></li> */}
-          <li>
+          {/* <li>
             <label>Select Province</label>
             <select
               onChange={(e) => {
@@ -328,7 +329,7 @@ function FillDetailAdress() {
                 );
               })}
             </select>
-          </li>
+          </li> */}
           <li>
             <label>Select Area</label>
             <select
