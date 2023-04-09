@@ -18,7 +18,7 @@ function Footer() {
       <div className='second-div'>
          <div>
             <p>जे खान चाहानुहुन्छ  घर मै पाउनुहुन्छ । </p>
-            <a href='tel:+977 98765800411'>+977 98765800411</a>
+            <a href='tel:+977 9765800411'>+977 9765800411</a>
          </div>
          <div>
             <Link to='/login'>Log in</Link>
@@ -74,8 +74,7 @@ function Footer() {
               <SocialIcon style={{margin:"3px" , height:"30px" , width:"30px"}} bgColor='red' fgColor='white' url='https://www.youtube.com/@chulofooddelivery'/>
               {/* <SocialIcon url='https://instagram.com/chulofooddelivery'/> */}
               </div>
-         </div>
-      </div>
+         </div>      </div>
       <div className='first-div'>
         <div>
         <small>Cash on delivery.</small>

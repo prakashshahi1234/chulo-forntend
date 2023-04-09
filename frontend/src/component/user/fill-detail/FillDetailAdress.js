@@ -16,10 +16,12 @@ function FillDetailAdress() {
   const [loading, setloading] = useState(false);
   const [name, setname] = useState("");
   const [phone, setphone] = useState("");
+  
   const [province, setprovince] = useState(1);
   const [district, setdistrict] = useState(1);
   const [localState, setlocalState] = useState(1);
   const [wardNo, setwardNo] = useState(1);
+
   const [area, setArea] = useState("");
   const [streetName, setstreetName] = useState("");
   const [reference, setreference] = useState("");
@@ -118,7 +120,7 @@ function FillDetailAdress() {
       setallData((state) => {
         return { ...state, area: data.result };
       });
-      setwardNo("")
+      setwardNo(10)
       setphone("")
     };
     load();
