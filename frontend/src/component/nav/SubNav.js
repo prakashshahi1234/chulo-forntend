@@ -1,12 +1,34 @@
-import React, { useRef ,useLayoutEffect  , useEffect} from "react";
+import React, { useRef ,useLayoutEffect  , useState, useEffect} from "react";
 import "./subnav.css";
 import { useSelector, useDispatch } from "react-redux";
 import { SearchItem } from "../../redux/actions/productAction";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import {useParams , useNavigate} from 'react-router-dom';
-
+import './nav.css'
+import {   AppRegistration, Close, ContactMail, LoginOutlined, SearchOutlined } from '@mui/icons-material';
+import { useAlert } from "react-alert";
 function SubNav() {
+
+  const [searchText, setsearchText] = useState("");
+  const searchRef = useRef("");
+  const alert = useAlert()
+  const searchItem = async(e) =>{
+
+           e.preventDefault()
+
+          if(searchText.length!==0){
+
+            dispatch(SearchItem(searchText.replace("/" , " ") ,"search"))
+
+            navigate("/search/"+searchText.replace("/" ,  " ") )
+       
+           }else{
+             console.log('code ..')
+             alert.show(<div style={{textTransform:"lowercase"}}>Enter Name or category of product.</div>)
+           }
+    }
+
   const { category } = useSelector((state) => state.productReducer);
 
   const dispatch = useDispatch();
@@ -50,7 +72,7 @@ function SubNav() {
         <div className="sub-nav">
       {drop?.map((current, key) => {
         return (
-          <div key={key} className="">
+          <div key={key} className="items-div">
             <KeyboardArrowLeftIcon
               sx={{ color: "white" }}
               ref={lRef}
@@ -85,7 +107,16 @@ function SubNav() {
           </div>
         );
       })}
-        </div>
+
+      <div>
+      <div className='middle-nav'>
+              <form onSubmit={searchItem}>
+                <input id='searchfied' ref={searchRef} type="search" placeholder='Search here' onChange={(e)=>setsearchText(e.target.value.trim())}/>
+                <SearchOutlined onClick={(e)=>{searchItem(e)}} className="searchIcon"/>
+                </form>
+            </div>
+      </div>
+ </div>
   );
 }
 

@@ -22,7 +22,7 @@ import {SearchItem} from '../../redux/actions/productAction'
 import logo from './image/logo.jpg'
 import noBgLogo from './image/nobg-logo.png'
 import { BsTelephone } from "react-icons/bs";
-
+import {BiHomeAlt} from 'react-icons/bi'
 
 function Nav() {
 
@@ -103,14 +103,14 @@ function Nav() {
       }
       // sidebar left for menu
       const leftList = (anchor) => (
-           <Box>
+           <Box style={{width: window?.innerWidth<600?"260px":"auto" , overflow:"hidden"}}>
            <ListItem >
-                  <ListItemIcon className='middle-nav left-nav'>
+                  {/* <ListItemIcon className='middle-nav left-nav'>
                   <form  onSubmit={(e)=>{return(setState(state=>{return ({...state, left:false} )}),searchItem(e))}}>
                     <input id='searchfied'  ref={searchRef} type="search" placeholder='Search here' onChange={(e)=>setsearchText(e.target.value.toLowerCase())}/>
                     <SearchOutlined onClick={(e)=>{ return( setState(state=>{return ({...state, left:false} )}),searchItem(e))}} className="searchIcon"/>
                   </form>
-                  </ListItemIcon>
+                  </ListItemIcon> */}
             </ListItem>
              <Box
                sx={{ width:"300px"  , margin:"auto"}}
@@ -146,6 +146,12 @@ function Nav() {
                       <BsTelephone/>
                   </ListItemIcon>
                  <ListItemText primary={"Contact"} />
+            </ListItem>
+            <ListItem sx={{cursor:"pointer"}} onClick={()=>{navigate("/")}}>
+                  <ListItemIcon >
+                      <BiHomeAlt/>
+                  </ListItemIcon>
+                 <ListItemText primary={"Home"} />
             </ListItem>
             {/* <p style={{textAlign:"start" , padding:'10px'}}>Category</p>     */}
             <Divider />        

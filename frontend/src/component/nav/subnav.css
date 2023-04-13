@@ -67,4 +67,23 @@
     background: #000;
     border-radius: 0px;
 }
+.sub-nav>div>.middle-nav{
+    display: none;
+}
+@media only screen and (max-width:600px){
+    .sub-nav>.items-div{
+        display: none;
 
+    }
+    .sub-nav{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .sub-nav>div>.middle-nav{
+        display: initial;
+        width: 100%;
+    }
+    .sub-nav>div>.middle-nav>form>input{
+        width: 100%;
+    }
+}
