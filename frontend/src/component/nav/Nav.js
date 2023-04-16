@@ -103,7 +103,7 @@ function Nav() {
       }
       // sidebar left for menu
       const leftList = (anchor) => (
-           <Box style={{width: window?.innerWidth<600?"260px":"auto" , overflow:"hidden"}}>
+           <Box style={{width: window?.innerWidth<600?"260px":"auto" , overflowX:"hidden"}}>
            <ListItem >
                   {/* <ListItemIcon className='middle-nav left-nav'>
                   <form  onSubmit={(e)=>{return(setState(state=>{return ({...state, left:false} )}),searchItem(e))}}>

@@ -165,7 +165,7 @@ function ProductDetail() {
  const pushToSelected =(e) =>{
     
     const value =  parseInt(e.target.value);
-
+      console.log(value)
     if(selectedItem.includes(value)===true){
 
         setSelectedItem(selectedItem.filter((item , index, self)=>item!==value));
@@ -270,7 +270,9 @@ if(isAuthenticated){
 
    }
 
-
+ useEffect(()=>{
+   
+ },[data])
    
 
      return (
@@ -379,7 +381,8 @@ if(isAuthenticated){
                                            return (
                                               <tr key={key}  className={`table-row-for-product-detail  + ${item.available<=1 && 'out-of-stock' } `} >
                                                   <td ref={actionRef}>
-                                                    {selectedItem.includes(key) ?
+                                                
+                                                 { data.length!==1 ? (  selectedItem.includes(key) ?
                                                      <input
                                                       key={key}  
                                                       type="checkbox" 
@@ -391,8 +394,11 @@ if(isAuthenticated){
                                                       type="checkbox"                                                      
                                                       onChange={pushToSelected}
                                                       value={key} 
-                                                      />
-                                                    }
+                                                      />):
+                                                     <>'</>
+                                                    
+                                                }
+                                               
                                                  </td>
                                                      <td style={{width:"fit-content"}}>{item?.size}</td>                                                    
                                                  

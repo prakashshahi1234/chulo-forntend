@@ -42,7 +42,7 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
-    "start": "set PORT=8000 && react-scripts start",
+    "start": "react-scripts start",
 
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -67,4 +67,5 @@
     ]
     
   }
+
 }
