@@ -1,6 +1,6 @@
 import Nav from "./component/nav/Nav"
 import Footer from './component/footer/footer';
-import { BrowserRouter as Router ,Routes, Route , useLocation} from "react-router-dom";
+import { Routes, Route , useLocation} from "react-router-dom";
 import React,{Suspense,useEffect } from "react";
 import "./App.css"
 import {useDispatch  , useSelector} from "react-redux";
@@ -46,12 +46,26 @@ function App() {
      store.dispatch(getUserAdress())
      store.dispatch(setLocation(alert))
      store.dispatch(getStatusOfApplication())
-     
+
      navigator.permissions.query({ name: 'geolocation' }).then((permissionStatus) => {
       permissionStatus.onchange = () => {
         store.dispatch(setLocation(alert))
       };
     });
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+
+
+ 
+      let  isFacebookApp = () =>{
+        return (ua.indexOf("FBAN") > -1) && (ua.indexOf("FBAV") > -1);
+    }
+    
+      if (isFacebookApp()) {
+        window.parent.location.assign("https://chulofood.com.np");
+    }else{
+      console.log("not facebook app")
+    }
+
 
   },[])
 
@@ -81,7 +95,6 @@ function App() {
   // alert.show(url)
   return (
     <div className="App">
-      <Router>
            <Nav/>
           <Suspense fallback={<Loading/>}>
           <Routes>
@@ -105,7 +118,6 @@ function App() {
           </Routes>
           </Suspense>
         { url !=='http://localhost:3000'  && <Footer/>}
-        </Router>
     </div>
   );
 }

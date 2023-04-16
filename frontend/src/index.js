@@ -12,7 +12,7 @@ import ErrorIcon from '@mui/icons-material/Error';
 import CloseIcon from '@mui/icons-material/Close';
 import * as serviceworker from './serviceWorkerRegistration'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-
+import { BrowserRouter } from 'react-router-dom';
 const options = {
   position: positions.TOP_RIGHT,
   timeout: 7000,
@@ -44,7 +44,11 @@ const AlertTemplate = ({ style, options, message, close }) => {
   </section>
 )}
 
+
+
+
 ReactDOM.render(
+  <BrowserRouter>
   <GoogleOAuthProvider clientId ="805522899938-362kfj0f5nqichi1qk7kdjpkr79mi44u.apps.googleusercontent.com">
   <Provider store={Store} >
      <AlertProvider template={AlertTemplate}  {...options}>
@@ -52,6 +56,7 @@ ReactDOM.render(
      </AlertProvider>  
   </Provider>
   </GoogleOAuthProvider>
+  </BrowserRouter>
   ,
   document.getElementById('root')
 );

@@ -10,8 +10,8 @@ import ReactImageMagnify from 'react-image-magnify';
 import {Helmet} from 'react-helmet'
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-
-
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 function ProductDetail() {
     
     const [index, setindex] = useState(0)
@@ -220,20 +220,24 @@ if(isAuthenticated){
 
         actionRef.current.style.border="4px solid yellow"
         actionRef.current.style.transition="0.7s all"
-        alert.error(<div style={{ textTransform:"capitalize" }}>Select at least one item. To select item click on checkbox. Then click add to cart Button</div> , {timeout:10000})
+        alert.error(<div > click on checkbox covered by yellow color below. Then click add to Buy Button</div> , {timeout:10000})
         
     }else{
 
         dispatch(addToCart(forAdd))
 
-        alert.success("added .")
+        alert.success(<div>Added <Button><Link to="/checkout">Checkout</Link></Button></div>)
     }
 
    setSelectedItem([])
 
 }else{
 
-    navigate("/login")
+  alert.info("don't worry! we are redirect you to register page. After register you can Add." , {timeout: 7000})
+  setTimeout(()=>{
+    navigate("/register")
+
+  },3000)
 
 }
 
@@ -246,7 +250,7 @@ if(isAuthenticated){
     
             actionRef.current.style.border="4px solid yellow"
             actionRef.current.style.transition="0.7s all"
-            alert.error(<div style={{ textTransform:"capitalize" }}>Select at least one item.To select item click on checkbox. Then click add to Buy Button</div> , {timeout:10000})
+            alert.error(<div > click on checkbox covered by yellow color below. Then click add to Buy Button</div> , {timeout:10000})
             
         }else{
 
@@ -263,8 +267,12 @@ if(isAuthenticated){
        setSelectedItem([])
     
     }else{
-    
-        navigate("/login")
+        
+      alert.info("don't worry! we are redirect you to register page. After register you can buy." , {timeout: 7000})
+      setTimeout(()=>{
+        navigate("/register")
+
+      },3000)
     
     }
 
@@ -281,7 +289,6 @@ if(isAuthenticated){
          <title>{title}</title>
          
          </Helmet>
-   
         {loading?<Loading/>:<div className='product-detail'>
               <div className='images'>
                  <div className="menu-images" >
@@ -379,49 +386,114 @@ if(isAuthenticated){
                            <tbody>                         
                                    {  data.map((item, key)=>{
                                            return (
-                                              <tr key={key}  className={`table-row-for-product-detail  + ${item.available<=1 && 'out-of-stock' } `} >
-                                                  <td ref={actionRef}>
-                                                
-                                                 { data.length!==1 ? (  selectedItem.includes(key) ?
-                                                     <input
-                                                      key={key}  
-                                                      type="checkbox" 
-                                                      onChange={pushToSelected}
-                                                       value={key} checked
-                                                       />:
-                                                    <input  
-                                                      key={key+1}
-                                                      type="checkbox"                                                      
-                                                      onChange={pushToSelected}
-                                                      value={key} 
-                                                      />):
-                                                     <>'</>
-                                                    
-                                                }
-                                               
-                                                 </td>
-                                                     <td style={{width:"fit-content"}}>{item?.size}</td>                                                    
-                                                 
-                                                     <td style={{display:"flex"  ,alignItems:"center"}}>
-                                                     <RemoveIcon onClick={()=>{quntityHandlerForIcons(item?.quantity, key , item?.available ,"subtract")}}/>
+                                             <tr
+                                               key={key}
+                                               className={`table-row-for-product-detail  + ${
+                                                 item.available <= 1 &&
+                                                 "out-of-stock"
+                                               } `}
+                                             >
+                                               <td ref={actionRef} style={{position:'relative'}}>
+                                                 {selectedItem.includes(key) ? (
+                                                   <input
+                                                     key={key}
+                                                     type="checkbox"
+                                                     onChange={pushToSelected}
+                                                     value={key}
+                                                     checked
+                                                   />
+                                                 ) : (
+                                                   <input
+                                                     key={key + 1}
+                                                     type="checkbox"
+                                                     onChange={pushToSelected}
+                                                     value={key}
+                                                     style={{ color: "green" }}
+                                                     placeholder="click me"
+                                                     id="select"
+                                                   />
+                                                 )}
+                                                 {/* <label
+                                                   style={{position:"absolute", bottom:"-30px" , Width:"70px", background:"blue" , color:"red" , left:"0px"}}
+                                                   htmlFor="select"
+                                                 >
+                                                   <p>Click Here</p>
+                                                 </label> */}
+                                               </td>
+                                               <td
+                                                 style={{
+                                                   width: "fit-content",
+                                                 }}
+                                               >
+                                                 {item?.size}
+                                               </td>
 
-                                                       <input 
-                                                       style={{padding:"3px", 'textAlign':"center" , border:"1px solid lightgray" , width:"fit-content"}}
-                                                        ref={inputRef}  type='number' pattern="[0-9]"  
-                                                       value={item?.quantity}
-                                                       onChange={(e)=>{ return quntityHandler(e, key, item?.available)}}
-                                                        max={item?.available} 
-                                                        min={1}
-                                                        onFocus={()=>quntityHandlerForIcons(0, key , item?.available ,"focus")}
-                                                        placeholder={"Enter Quantity You Want."}
-                                                        />
-                                                      <AddIcon onClick={()=>{quntityHandlerForIcons(item?.quantity, key , item?.available ,"add")}}/>
+                                               <td
+                                                 style={{
+                                                   display: "flex",
+                                                   alignItems: "center",
+                                                 }}
+                                               >
+                                                 <RemoveIcon
+                                                   onClick={() => {
+                                                     quntityHandlerForIcons(
+                                                       item?.quantity,
+                                                       key,
+                                                       item?.available,
+                                                       "subtract"
+                                                     );
+                                                   }}
+                                                 />
 
-                                                      </td>
-                                                      <td><b>Rs {item?.price}</b></td>
-              
-                                                     </tr>
-                                                  )             
+                                                 <input
+                                                   style={{
+                                                     padding: "3px",
+                                                     textAlign: "center",
+                                                     border:
+                                                       "1px solid lightgray",
+                                                     width: "fit-content",
+                                                   }}
+                                                   ref={inputRef}
+                                                   type="number"
+                                                   pattern="[0-9]"
+                                                   value={item?.quantity}
+                                                   onChange={(e) => {
+                                                     return quntityHandler(
+                                                       e,
+                                                       key,
+                                                       item?.available
+                                                     );
+                                                   }}
+                                                   max={item?.available}
+                                                   min={1}
+                                                   onFocus={() =>
+                                                     quntityHandlerForIcons(
+                                                       0,
+                                                       key,
+                                                       item?.available,
+                                                       "focus"
+                                                     )
+                                                   }
+                                                   placeholder={
+                                                     "Enter Quantity You Want."
+                                                   }
+                                                 />
+                                                 <AddIcon
+                                                   onClick={() => {
+                                                     quntityHandlerForIcons(
+                                                       item?.quantity,
+                                                       key,
+                                                       item?.available,
+                                                       "add"
+                                                     );
+                                                   }}
+                                                 />
+                                               </td>
+                                               <td>
+                                                 <b>Rs {item?.price}</b>
+                                               </td>
+                                             </tr>
+                                           );             
                                        })
                                    }          
                                         

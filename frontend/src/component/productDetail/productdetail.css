@@ -194,6 +194,14 @@ opacity: 1;
     width: 50px;
 
 }
+.table-row-for-product-detail>td>input[type="checkbox"]{
+    box-shadow: 0 0 0 3px hotpink;
+    padding: 0px;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    border: none;
+}
 .table-row-for-product-detail>td>input:focus{
     padding-left: 30px;
     height: 30px;

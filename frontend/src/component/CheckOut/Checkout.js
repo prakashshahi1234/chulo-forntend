@@ -69,7 +69,7 @@ function Checkout() {
     const widthOfwindow = window.innerWidth;
     const heightOfwindow = document.body.scrollHeight;
     if(widthOfwindow<600){
-      window.scrollTo(0, heightOfwindow-500);
+      // window.scrollTo(0, heightOfwindow-1000);
     }else{
 
     }

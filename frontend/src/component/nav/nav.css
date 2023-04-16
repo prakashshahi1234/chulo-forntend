@@ -1,3 +1,18 @@
+.order-alert{
+    background-color: var(--button-color);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+}
+.order-alert>div{
+    width: 300px;
+    margin: auto;
+    color: green;
+
+}
 .nav{
     display: flex;
     justify-content: space-between;

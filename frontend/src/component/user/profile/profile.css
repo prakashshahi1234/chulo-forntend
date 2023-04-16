@@ -1,5 +1,6 @@
 .user-profile{
     margin-top: 20px;
+
 }
 .normal-info{
     width: 320px;
@@ -96,6 +97,10 @@
 
 
 @media only screen and (max-width:600px){
+    .user-profile{
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
     .user-details{
         margin: auto;
         padding: auto;

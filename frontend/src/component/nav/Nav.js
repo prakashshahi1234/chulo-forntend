@@ -32,7 +32,7 @@ function Nav() {
 
    const {pathname} = useLocation()
     
-   const {isAuthenticated , user} = useSelector(state => state.userReducer);
+   const {isAuthenticated , user , orderedItem} = useSelector(state => state.userReducer);
 
    const {cartItem , error , loading , cartItemDetails , category} = useSelector(state => state.productReducer);
   
@@ -262,6 +262,7 @@ function Nav() {
  
     return (
       <>
+     {orderedItem?.length>=1 && <div onClick={()=>{navigate("/user-profile")}} className='order-alert'> <div>You have a order. <a href="/user-profile">Check Your Order.</a></div></div>}
       <div  style={{position:"sticky" ,top:"0px" ,padding:"3px 3px 0px 3px",zIndex:100 , background:"var(--bg-color)"}}>
         <nav className='nav'>
             <div className='left-nav'>
@@ -283,7 +284,7 @@ function Nav() {
                       <img alt="logo image" src={noBgLogo} onClick={()=>{navigate("/")}} className={"logo"}/>
                      {   ['right'].map((anchor) => (
                      <React.Fragment key={anchor}>
-                       <button   style={{color:"white", padding:"6px", borderRadius:"4px"}} className='cart-item-for-moblie'  onClick={toggleDrawer(anchor, true)}><AddShoppingCartIcon />
+                       <button   style={{ color:"white", padding:"6px", borderRadius:"4px"}} className='cart-item-for-moblie'  onClick={toggleDrawer(anchor, true)}><AddShoppingCartIcon  />
                        <span style={{background:"red", color:"white", height:"14px", width:"14px",  borderRadius:"50%" , display:"flex" , alignItems:"center" , justifyContent:"center" ,padding:"3px"}}>{cartItem?.length}</span>
 
                        </button>
@@ -311,7 +312,7 @@ function Nav() {
 
                    {   ['right'].map((anchor) => (
                      <React.Fragment key={anchor}>
-                       <Button onClick={toggleDrawer(anchor, true)} style={{color:"white", borderRadius:"10px"}}><AddShoppingCartIcon style={{color:"white" }}/>
+                       <Button onClick={toggleDrawer(anchor, true)} style={{color:"white", borderRadius:"10px"}}><AddShoppingCartIcon  style={{color:"white" }}/>
                        <span style={{background:"red", color:"white", height:"15px", width:"15px",  borderRadius:"50%" , display:"flex" , alignItems:"center" , justifyContent:"center" ,padding:"3px"}}>{cartItem?.length}</span>
                        </Button>
                        <Drawer

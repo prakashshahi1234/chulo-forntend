@@ -18,7 +18,6 @@ import {
 import axios from "axios";
 import { useAlert } from "react-alert";
 import {Helmet} from 'react-helmet'
-import MessengerCustomerChat from 'react-messenger-customer-chat';
 import slider1 from './image/slider-3.png'
 import slider2 from './image/slider2.jpg'
 import slider4 from './image/slider-4.png'
@@ -56,17 +55,17 @@ function Home() {
 
   }, []);
 
-   useGoogleOneTapLogin({
-    onSuccess: async credentialResponse => {
+//    useGoogleOneTapLogin({
+//     onSuccess: async credentialResponse => {
      
-        alert.success("Login Successfull.")
+//         alert.success("Login Successfull.")
 
-        const {data} =  await  axios.post('api/v1/register', { },{headers: {Authorization:credentialResponse.credential}})
+//         const {data} =  await  axios.post('api/v1/register', { },{headers: {Authorization:credentialResponse.credential}})
        
-    dispatch({type:LOGIN_USER_SUCCESS , payload: data?.user})
+//     dispatch({type:LOGIN_USER_SUCCESS , payload: data?.user})
      
-  }
-})
+//   }
+// })
 
   const urlParams = new URLSearchParams(window.location.search);
 const pageSize = urlParams.get('fbclid');
@@ -264,11 +263,7 @@ const u2 = "https://www.chulofood.com.np/"
         </div>
       </div>
 
-  <MessengerCustomerChat
-           pageId="102297996084565"
-           appId="749457673122614"
- 
-        />
+
     </div>
   );
 }

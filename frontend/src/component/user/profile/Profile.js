@@ -125,15 +125,15 @@ function Profile() {
                   <thead>
                     <tr>
                       <th>SN</th>
-                      <th>Id</th>
+                      {/* <th>Id</th> */}
                       <th>Image</th>
                       <th> Name</th>
                       <th>  Quantity</th>
                       <th>Size</th>
                       <th> Price per item</th>
                       <th> Delivered At</th>
-                      <th>Paid Amount</th>
-                      <th>Payment Id</th>
+                      {/* <th>Paid Amount</th> */}
+                      {/* <th>Payment Id</th> */}
                       <th>Status</th>
                     </tr>
                   </thead>
@@ -144,7 +144,7 @@ function Profile() {
                         return (
                           <tr key={key}>
                             <td>{key + 1}</td>
-                            <td>{uuidv4()}-<b style={{color:"green"}}>{item.id}</b></td>
+                            {/* <td>{uuidv4()}-<b style={{color:"green"}}>{item.id}</b></td> */}
                             <td>
                               <img
                                 height={"100px"}
@@ -159,9 +159,9 @@ function Profile() {
                             <td>Rs. {item.price}</td>
                             
                             <td> 30min to 1 hrs.</td>
-                            <td>{item.amount  || "0"}</td>
-                            <td>{item.paymentId.substring(0,16)+"..."+item.paymentId.substring(item.paymentId.length-5 , item.paymentId.length-1)}</td>
-                            <td style={{fontWeight:"bold"}}>
+                            {/* <td>{item.amount  || "0"}</td> */}
+                            {/* <td>{item.paymentId.substring(0,16)+"..."+item.paymentId.substring(item.paymentId.length-5 , item.paymentId.length-1)}</td> */}
+                            <td style={{fontWeight:"bold" , color:'green'}}>
                               {/* {item.inPackaging} */}
                               {/* {item.isDeliver} */}
                               {item.isCancled ===1 &&<p> This order has cancled. </p>}
