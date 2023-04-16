@@ -10,7 +10,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import InfoIcon from '@mui/icons-material/Info';
 import ErrorIcon from '@mui/icons-material/Error';
 import CloseIcon from '@mui/icons-material/Close';
-import * as serviceworker from './serviceWorkerRegistration'
+// import * as serviceworker from './serviceWorkerRegistration'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { BrowserRouter } from 'react-router-dom';
 const options = {
@@ -63,4 +63,4 @@ ReactDOM.render(
 
 
 // reportWebVitals();
-serviceworker.register()
+// serviceworker.register()
