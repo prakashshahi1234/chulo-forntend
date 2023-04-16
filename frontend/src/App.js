@@ -5,7 +5,7 @@ import React,{Suspense,useEffect } from "react";
 import "./App.css"
 import {useDispatch  , useSelector} from "react-redux";
 import axios from "axios";
-import  {getOrder, getUserAdress, getUserDetail , setLocation , getStatusOfApplication} from "./redux/actions/userAction";
+import  {getOrder, getUserAdress, getUserDetail  , getStatusOfApplication} from "./redux/actions/userAction";
 import { loadCartItem, loadCategory} from "./redux/actions/productAction"
 import  store from "./redux/store";
 import cookie from "js-cookie";
@@ -44,14 +44,15 @@ function App() {
      store.dispatch(getOrder());
      store.dispatch(loadCategory());
      store.dispatch(getUserAdress())
-     store.dispatch(setLocation(alert))
+    //  store.dispatch(setLocation(alert))
      store.dispatch(getStatusOfApplication())
 
-     navigator.permissions.query({ name: 'geolocation' }).then((permissionStatus) => {
-      permissionStatus.onchange = () => {
-        store.dispatch(setLocation(alert))
-      };
-    });
+    //  navigator.permissions.query({ name: 'geolocation' }).then((permissionStatus) => {
+    //   permissionStatus.onchange = () => {
+    //     store.dispatch(setLocation(alert))
+    //   };
+    // });
+    
     var ua = navigator.userAgent || navigator.vendor || window.opera;
 
 

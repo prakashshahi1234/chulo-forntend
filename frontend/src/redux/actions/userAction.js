@@ -269,38 +269,38 @@ export const getStatusOfApplication =()=> async(dispatch)=>{
  }
 }
 
-export const setLocation =(alert)=> async(dispatch)=>{
- try {
-  dispatch({type:GET_LOCATION_REQUEST , payload:{timeStamp:new Date().getTime()}})
+// export const setLocation =(alert)=> async(dispatch)=>{
+//  try {
+//   dispatch({type:GET_LOCATION_REQUEST , payload:{timeStamp:new Date().getTime()}})
  
-  navigator.permissions.query({ name: 'geolocation' }).then((result) => {
-     const verifyPage =window.location.pathname.search("/verify")
-    if(result.state==="denied" && verifyPage !==0){
-      alert.error(<div>
-        <p>Allow location to get better experience.</p>
-        {/* <img src={locationguide}  /> */}
-        </div>,{timeOut:15000})
-      const timeStamp =new Date().getTime()
-      dispatch({type:GET_LOCATION_SUCCESS , payload:{ timeStamp}})
-    }else{
-      if(result.state==="prompt") alert.info("Allow location to get better experience.")
-        if ('geolocation' in navigator) {
-             navigator.geolocation.getCurrentPosition((response)=>{
+//   navigator.permissions.query({ name: 'geolocation' }).then((result) => {
+//      const verifyPage =window.location.pathname.search("/verify")
+//     if(result.state==="denied" && verifyPage !==0){
+//       alert.error(<div>
+//         <p>Allow location to get better experience.</p>
+//         {/* <img src={locationguide}  /> */}
+//         </div>,{timeOut:15000})
+//       const timeStamp =new Date().getTime()
+//       dispatch({type:GET_LOCATION_SUCCESS , payload:{ timeStamp}})
+//     }else{
+//       if(result.state==="prompt") alert.info("Allow location to get better experience.")
+//         if ('geolocation' in navigator) {
+//              navigator.geolocation.getCurrentPosition((response)=>{
     
-              const latitude = response.coords.latitude;
-              const longitude =response.coords.longitude;
-              const timeStamp =new Date().getTime()
+//               const latitude = response.coords.latitude;
+//               const longitude =response.coords.longitude;
+//               const timeStamp =new Date().getTime()
               
-              dispatch({type:GET_LOCATION_SUCCESS , payload:{latitude ,longitude , timeStamp}})})
-          }else{
+//               dispatch({type:GET_LOCATION_SUCCESS , payload:{latitude ,longitude , timeStamp}})})
+//           }else{
 
-               const timeStamp =new Date().getTime()     
-               dispatch({type:GET_LOCATION_SUCCESS , payload:{timeStamp}})
-             }
+//                const timeStamp =new Date().getTime()     
+//                dispatch({type:GET_LOCATION_SUCCESS , payload:{timeStamp}})
+//              }
 
-}
-})
- } catch (error) {
-  dispatch({type:GET_LOCATION_FAILED , payload:error.message})
- }
-}
+// }
+// })
+//  } catch (error) {
+//   dispatch({type:GET_LOCATION_FAILED , payload:error.message})
+//  }
+// }
